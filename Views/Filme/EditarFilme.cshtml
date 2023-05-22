@@ -1,0 +1,33 @@
+﻿@model vannon_teste.Models.Cliente
+
+@{
+    ViewBag.Title = "Editar Cliente";
+    ViewBag.BodyClass = "main";
+}
+
+<h2>Editar Cliente</h2>
+
+<form action="/filme/EditarCliente" method="post" role="form">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="id" value="@Model.Id">
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" value="@Model.Nome">
+    </div>
+    <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" class="form-control" name="cpf" id="cpf" value="@Model.Usuario.Email">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email" value="@Model.Usuario.Senha">
+    </div>
+    <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" name="senha" id="senha">
+        <small class="form-text text-muted">Deixe em branco para manter a senha atual.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

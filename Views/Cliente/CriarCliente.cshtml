@@ -1,0 +1,30 @@
+﻿@model vannon_teste.Models.Cliente
+
+@{
+    ViewBag.Title = "Index - Cliente";
+    ViewBag.BodyClass = "main";
+}
+
+<h2>Novo Filme</h2>
+
+<form action="/cliente/CriarCliente" method="post" role="form">
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o Nome">
+    </div>
+    <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Digite o CPF">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email" placeholder="Digite o Email">
+    </div>
+    <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite a Senha">
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

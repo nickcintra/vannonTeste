@@ -1,0 +1,33 @@
+﻿@model IEnumerable<vannon_teste.Models.Filme> 
+@{
+    ViewBag.Title = "Index -  Filme";
+    ViewBag.BodyClass = "main";
+}
+
+<h2>Filme</h2>
+<a href="@Url.RouteUrl("filme.CriarFilme")" class="btn btn-success mb-3">Criar Filme</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Titulo</td>
+            <td>Gênero</td>
+            <td>Descrição</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+           <tr>
+               <td>@item.titulo</td>
+               <td>@item.genero</td>
+               <td>@item.descricao</td>
+               <td>
+                   <a href="@Url.Action("EditarFilme","Filme", new {id = item.id})" class="btn btn-warning mb-3">Editar</a>
+                   <a href="@Url.Action("DeletarFilme","Filme", new {id = item.id})" class="btn btn-danger mb-3">Excluir</a>
+               </td>
+           </tr>
+        }
+    </tbody>
+</table>

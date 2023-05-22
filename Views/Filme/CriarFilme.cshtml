@@ -1,0 +1,23 @@
+﻿@model vannon_teste.Models.Filme
+@{
+    ViewBag.Title = "Index -  Filme";
+    ViewBag.BodyClass = "main";
+}
+
+<h2>Novo Filme</h2>
+
+<form action="/filme/CriarFilme" method="post" role="form">
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Digite o título">
+    </div>
+    <div class="mb-3">
+        <label for="genero" class="form-label">Gênero</label>
+        <input type="text" class="form-control" name="genero" id="genero" placeholder="Digite o gênero">
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" name="descricao" id="descricao" rows="3" placeholder="Digite a descrição"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
